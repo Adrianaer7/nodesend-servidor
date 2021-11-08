@@ -1,0 +1,9 @@
+"npm i express" framework de node para hacer backend
+"npm i --save-dev nodemon" reinicia el servidor cada vez que detecte que hay cambio de codigo
+"npm i mongoose dotenv" Mongoose es el ORM. Dotenv nos va a permitir crear archivos con variables de entorno. Estas variables en desarrollo son unas, y en produccion son otras
+"npm install bcrypt" para hashear las contraseñas
+"npm i express-validator" para realizar la validacion en la ruta
+"npm i jsonwebtoken" para crear el token
+"npm i nanoid" para id cortas que pueden ser utilizadas como url. Nanoid reemplaza a shorid
+"npm i --save multer" para subir archivos
+"npm i cors" Al enviar datos desde la pagina web, sale error de cors. Eso es porque estoy haciendo una peticion desde la pagina (localohst:3000) a la bd (localhost:4000), detecta que no es segura la peticion y la bloquea. Con esto habilitado, desbloquea esa restriccion
