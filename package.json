@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Proyecto NodeSend",
   "main": "index.js",
+  "engines": {
+    "node": "16.2.0"
+  },
   "scripts": {
     "dev": "nodemon ./index.js",
     "start": "node ./index.js"
