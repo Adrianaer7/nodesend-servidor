@@ -1,7 +1,7 @@
 const Usuario = require("../models/Usuario")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
-require("dotenv").config.apply({path: "variable.env"})  //dotenv carga variables de entorno que hay en un archivo .env. El path es la ruta del archivo
+require("dotenv").config.apply({path: "variables.env"})  //dotenv carga variables de entorno que hay en un archivo .env. El path es la ruta del archivo
 const {validationResult} = require("express-validator") 
 
 exports.autenticarUsuario  = async (req, res, next) => {
@@ -19,7 +19,6 @@ exports.autenticarUsuario  = async (req, res, next) => {
     if(!usuario) {  //si no hay email coincidente,
         res.status(401).json({msg: "El usuario no existe"})
     }
-
     //Verificar el password y autenticar el usuario
     if(bcrypt.compareSync(password, usuario.password)) {  //comparo la password que le estoy enviando con la password que ya está registrada en el usuario para saber si son iguales
         //Crear JWT
