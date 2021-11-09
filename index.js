@@ -9,12 +9,8 @@ const app = express()
 conectarDB()    //ejecuto la funcion que está en db.js
 
 //Habilitar Cors
-const opcionesCors = {
-    origin: "https://nodesend-cliente-tawny.vercel.app/",    //De esta manera solo va a aceptar peticiones de esta url
-    credentials:true,
-    optionSuccessStatus:200
-}
-app.use(cors(opcionesCors)) 
+app.use(cors({ credentials: true, origin: true })); //para que no moleste el cartel de cors de chrome en la consola
+app.options("*", cors());
 
 //Puerto de la app. Cuando haga el deployment en Heroku se espera que la variable de entorno se llame PORT
 const port = process.env.PORT || 4000   //Si existe process.env.PORT, entonces se asigna el puerto, sino, se asigna puerto 4000. Puede ser cualquier numero menos el puerto del cliente que es 3000
