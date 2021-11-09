@@ -10,7 +10,9 @@ conectarDB()    //ejecuto la funcion que está en db.js
 
 //Habilitar Cors
 const opcionesCors = {
-    origin: process.env.FRONTEND_URL    //De esta manera solo va a aceptar peticiones de esta url
+    origin: "https://nodesend-cliente-tawny.vercel.app/",    //De esta manera solo va a aceptar peticiones de esta url
+    credentials:true,
+    optionSuccessStatus:200
 }
 app.use(cors(opcionesCors)) 
 
