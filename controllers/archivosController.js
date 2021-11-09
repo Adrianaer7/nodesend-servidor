@@ -40,7 +40,7 @@ exports.descargar = async (req, res, next) => {
     const {archivo} = req.params    //traigo el nombre del archivo desde [enlace].js
     const enlace = await Enlaces.findOne({nombre: archivo})    //encuentra un enlace que tenga el mismo nombre del archivo que el que le paso por params
     if(!enlace) {
-        res.json({msg: "descargas superadas"}))    //si el enlace no existe (porque se eliminó al llegar al limite de descargas) redirecciono atras, osea al index
+        res.status(401).json({msg: "descargas superadas"})    //si el enlace no existe (porque se eliminó al llegar al limite de descargas) redirecciono atras, osea al index
         return next()
     }
     const archivoDescarga = __dirname + "/../uploads/" + archivo
