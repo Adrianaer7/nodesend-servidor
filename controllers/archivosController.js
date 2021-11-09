@@ -41,7 +41,7 @@ exports.descargar = async (req, res, next) => {
     console.log(req.archivo)
     const enlace = await Enlaces.findOne({nombre: archivo})    //encuentra un enlace que tenga el mismo nombre del archivo que el que le paso por params
     if(!enlace) {
-        res.redirect("back")    //si el enlace no existe (porque se eliminó al llegar al limite de descargas) redirecciono atras, osea al index
+        res.redirect(proccess.env.FRONTEND_URL)    //si el enlace no existe (porque se eliminó al llegar al limite de descargas) redirecciono atras, osea al index
         return next()
     }
     const archivoDescarga = __dirname + "/../uploads/" + archivo
